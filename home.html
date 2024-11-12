@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav class="menu">
+        <ul class="menu-center">
+          <li><a href="#">Loja</a></li>
+        </ul>
+        <ul class="menu-right">
+          <!-- Menu com nome de usaurio e botão de sair funcionando -->
+          <li><a id="userName">Usuário</a></li>
+          <li><a href="./index.html" id="logoutButton">Sair</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <h1>Bem-vindo, <span id="displayUserName">Usuário</span>!</h1>
+  </body>
+
+  <script>
+    // Nome do usuario
+    const userName = sessionStorage.getItem("userName");
+    document.getElementById("userName").textContent = userName || "Usuário";
+    document.getElementById("displayUserName").textContent =
+      userName || "Usuário";
+  </script>
+</html>

@@ -1,92 +1,107 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-    <head>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Page de Cadastro</title>
-        <link rel="stylesheet" href="styles.css">
-        
-    </head>
-<body>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page de Cadastro</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
     <!-- Cabeçalho com Menu -->
     <header>
-        <nav class="menu">
-            <ul class="menu-center">
-                <li><a href="#">Loja</a></li>
-                <li><a href="#" id="habilidadesButton">Habilidades</a></li> 
-            </ul>
-            <ul class="menu-right">
-                <li><a href="#" id="loginButton">Logar</a></li>
-                <li><a href="#" id="signUpButton">Criar Conta</a></li>
-            </ul>
-        </nav>
+      <nav class="menu">
+        <ul class="menu-center">
+          <li><a href="#">Loja</a></li>
+        </ul>
+        <ul class="menu-right">
+          <li><a href="#" id="loginButton">Logar</a></li>
+          <li><a href="#" id="signUpButton">Criar Conta</a></li>
+        </ul>
+      </nav>
     </header>
 
     <!-- Modal de Login -->
     <div id="loginModal" class="modal">
-        <div class="modal-content">
-            <span class="close" id="closeModal">&times;</span>
-            <h2>Login</h2>
-            <form>
-                <label for="email">Email:</label>
-                <input type="email" id="email" placeholder="Digite seu email" required>
+      <div class="modal-content">
+        <span class="close" id="closeModal">&times;</span>
+        <h2>Login</h2>
+        <form>
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="Digite seu email"
+            required
+          />
 
-                <label for="password">Senha:</label>
-                <input type="password" id="password" placeholder="Digite sua senha" required>
+          <label for="password">Senha:</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Digite sua senha"
+            required
+          />
 
-                <div class="modal-buttons">
-                    <button type="button" id="cancelButton">Cancelar</button>
-                    <button type="submit">Logar</button>
-                </div>
-            </form>
-        </div>
+          <div class="modal-buttons">
+            <button type="button" id="cancelButton">Cancelar</button>
+            <button type="submit">Logar</button>
+          </div>
+        </form>
+      </div>
     </div>
 
     <!-- Modal de Criar Conta -->
     <div id="signUpModal" class="modal">
-        <div class="modal-content">
-            <span class="close" id="closeSignUpModal">&times;</span>
-            <h2>Criar Conta</h2>
-            <form>
-                <label for="name">Usuário (NickName):</label>
-                <input type="text" id="name" placeholder="Digite seu nome" required>
+      <div class="modal-content">
+        <span class="close" id="closeSignUpModal">&times;</span>
+        <h2>Criar Conta</h2>
+        <form>
+          <label for="name">Usuário (NickName):</label>
+          <input type="text" id="name" placeholder="Digite seu nome" required />
 
-                <label for="emailSignUp">Email:</label>
-                <input type="email" id="emailSignUp" placeholder="Digite seu email" required>
+          <label for="emailSignUp">Email:</label>
+          <input
+            type="email"
+            id="emailSignUp"
+            placeholder="Digite seu email"
+            required
+          />
 
-                <label for="passwordSignUp">Senha:</label>
-                <input type="password" id="passwordSignUp" placeholder="Digite sua senha" required>
+          <label for="passwordSignUp">Senha:</label>
+          <input
+            type="password"
+            id="passwordSignUp"
+            placeholder="Digite sua senha"
+            required
+          />
 
-                <label for="confirmPassword">Confirmar Senha:</label>
-                <input type="password" id="confirmPassword" placeholder="Confirme sua senha" required>
+          <label for="confirmPassword">Confirmar Senha:</label>
+          <input
+            type="password"
+            id="confirmPassword"
+            placeholder="Confirme sua senha"
+            required
+          />
 
-                <div class="modal-buttons">
-                    <button type="button" id="cancelSignUpButton">Cancelar</button>
-                    <button type="submit">Criar Conta</button>
-                </div>
+          <div class="modal-buttons">
+            <button type="button" id="cancelSignUpButton">Cancelar</button>
+            <button type="submit">Criar Conta</button>
+          </div>
 
-                <div class="google-signup">
-                    <button type="button" class="google-button">
-                        <i class="fab fa-google"></i> Registrar conta Google
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
-    <!-- Modal de Habilidades -->
-    <div id="habilidadesModal" class="modal">
-        <div class="modal-content">
-            <span class="close" id="closeHabilidadesModal">&times;</span>
-            <h2>Habilidades</h2>
-            <div id="habilidadesContent">
-                <!-- O conteúdo sera carregado aqui via JavaScript, mas nao esta funcionando-->
-            </div>
-        </div>
+          <div class="google-signup">
+            <button type="button" class="google-button">
+              <i class="fab fa-google"></i> Registrar conta Google
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
 
     <!-- Link para o JavaScript -->
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
-

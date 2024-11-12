@@ -1,71 +1,63 @@
 // elementos do DOM
-const loginModal = document.getElementById('loginModal');
-const signUpModal = document.getElementById('signUpModal');
-const habilidadesModal = document.getElementById('habilidadesModal');
-const loginButton = document.getElementById('loginButton');
-const signUpButton = document.getElementById('signUpButton');
-const habilidadesButton = document.getElementById('habilidadesButton');
-const closeModal = document.getElementById('closeModal');
-const closeSignUpModal = document.getElementById('closeSignUpModal');
-const closeHabilidadesModal = document.getElementById('closeHabilidadesModal');
-const cancelButton = document.getElementById('cancelButton');
-const cancelSignUpButton = document.getElementById('cancelSignUpButton');
+const loginModal = document.getElementById("loginModal");
+const signUpModal = document.getElementById("signUpModal");
+const loginButton = document.getElementById("loginButton");
+const signUpButton = document.getElementById("signUpButton");
+const closeModal = document.getElementById("closeModal");
+const closeSignUpModal = document.getElementById("closeSignUpModal");
+const cancelButton = document.getElementById("cancelButton");
+const cancelSignUpButton = document.getElementById("cancelSignUpButton");
 
 // Abrir o modal de login
-loginButton.addEventListener('click', () => {
-    loginModal.style.display = 'block';
+loginButton.addEventListener("click", () => {
+  loginModal.style.display = "block";
 });
 
 // Abrir o modal de criaçao de conta
-signUpButton.addEventListener('click', () => {
-    signUpModal.style.display = 'block';
-});
-
-// Abrir o modal de habilidades
-habilidadesButton.addEventListener('click', () => {
-    habilidadesModal.style.display = 'block';
-    // Carregar o conteudo do arquivo habilidades.html (NÃO FUNCIONANDO)
-    fetch('habilidades.html')
-        .then(response => response.text())
-        .then(data => {
-            habilidadesModal.querySelector('.habilidades-content').innerHTML = data;
-        })
-        .catch(error => {
-            habilidadesModal.querySelector('.habilidades-content').innerHTML = '<p>Erro de carregamento.</p>';
-            console.error('Erro de carregamento:', error);
-        });
+signUpButton.addEventListener("click", () => {
+  signUpModal.style.display = "block";
 });
 
 // Fechar o modal de login
-closeModal.addEventListener('click', () => {
-    loginModal.style.display = 'none';
+closeModal.addEventListener("click", () => {
+  loginModal.style.display = "none";
 });
 
 // Fechar o modal de criaçao de conta
-closeSignUpModal.addEventListener('click', () => {
-    signUpModal.style.display = 'none';
-});
-
-// Fechar o modal de habilidades
-closeHabilidadesModal.addEventListener('click', () => {
-    habilidadesModal.style.display = 'none';
+closeSignUpModal.addEventListener("click", () => {
+  signUpModal.style.display = "none";
 });
 
 // Cancelar o login
-cancelButton.addEventListener('click', () => {
-    loginModal.style.display = 'none';
+cancelButton.addEventListener("click", () => {
+  loginModal.style.display = "none";
 });
 
 // Cancelar a criaçao de conta
-cancelSignUpButton.addEventListener('click', () => {
-    signUpModal.style.display = 'none';
+cancelSignUpButton.addEventListener("click", () => {
+  signUpModal.style.display = "none";
 });
 
 // Fechar modais ao clicar fora deles
-window.addEventListener('click', (event) => {
-    if (event.target === loginModal || event.target === signUpModal || event.target === habilidadesModal) {
-        loginModal.style.display = 'none';
-        signUpModal.style.display = 'none';
-        habilidadesModal.style.display = 'none';
-    }
+window.addEventListener("click", (event) => {
+  if (event.target === loginModal || event.target === signUpModal) {
+    loginModal.style.display = "none";
+    signUpModal.style.display = "none";
+  }
 });
+
+// logou
+document
+  .querySelector("#loginModal form")
+  .addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    // email como exemplo de nome de usuário
+    const userName = document.getElementById("email").value;
+
+    // Só pra guardar o nome do usuario
+    sessionStorage.setItem("userName", userName);
+
+    // abre a página "home"
+    window.location.href = "home.html";
+  });
